@@ -3,6 +3,7 @@ package com.dozo.springboot.crmcrud.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import com.dozo.springboot.crmcrud.service.EmployeeService;
 public class EmployeeRestController {
 
 	@Autowired
+	@Qualifier("employeeServiceRepoImpl")
 	private EmployeeService service;
 	
 	@GetMapping("/employees")
